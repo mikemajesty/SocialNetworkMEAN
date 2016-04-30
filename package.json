@@ -1,0 +1,14 @@
+{
+  "name": "socialnet",
+  "version": "1.0.0",
+  "description": "this is the social network",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mike Rodrigues De Lima",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

@@ -14,6 +14,8 @@ app.get('/', (req,res) => {
   res.sendfile('index.html');
 });
 
+app.post('/api/user/signup', authenticationController.signup)
+
 app.listen('3000', () => {
     console.log("This is running in the post 3000");
 });

@@ -1,20 +1,29 @@
 <html ng-app="Social">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello</title>
     <link rel="stylesheet" href='node_modules/bootstrap/dist/css/bootstrap.min.css'></link>
+    <link rel="stylesheet" href='app/css/main.css'>
   </head>
 
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-
+      <div>
+        <input type="text" ng-model='login.email'>
+        <input type="password" ng-model='login.password'>
+          <button>Login</button>
+          <a ui-sref="signUp">Create an Account</a>
+      </div>
     </div>
   </nav>
+
+    <div ui-view></div>
   </body>
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-    <script src="app/app.js">  </script>
-    <script src='node_modules/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src="app/app.js"></script>
+    <script src='app/signup/signup-controller.js'></script>
+
 </html>

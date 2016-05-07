@@ -3,12 +3,11 @@
      function ($scope, $http, $state) {
 
        $scope.loginUserIn = () => {
-
           $http.post('api/user/login', $scope.login)
-            .success( (data) => {
-
+            .success( (res) => {
+              localStorage.setItem('user-data', JSON.stringify(res));
             })
-            .error( (err) => console.log(err) );
+            .error( (err) => {console.log(err);} );
        };
     }]);
 }());

@@ -24,6 +24,7 @@ app.get('/', (req,res) => {
 });
 
 app.post('/api/user/signup', authenticationController.signup)
+app.post('/api/user/login', authenticationController.login);
 
 app.listen('3000', () => {
     console.log("This is running in the post 3000");

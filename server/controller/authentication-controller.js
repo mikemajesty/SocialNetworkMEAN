@@ -5,3 +5,17 @@ module.exports.signup = (req, res) => {
   user.save();
   res.json(req.body);
 };
+
+module.exports.login = (req, res) => {
+  User.find(req.body, (err, data) => {
+
+    if (err) {
+      console.log('error login:', err);
+    }
+
+    if (data.length > 0) {
+      res.json(req.body.email);
+    }
+
+  });
+};

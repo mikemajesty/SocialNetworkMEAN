@@ -4,9 +4,9 @@
 
       $scope.createUser = () => {
         $http.post('api/user/signup', $scope.User).success( (res) => {
-          console.log('post res',res);
+
         }).error( (err) => {
-          console.log('post err',err);
+          console.log(err);
         });
       }
     }]);

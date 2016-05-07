@@ -7,12 +7,12 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
     <div class="container">
       <div style="padding-top:10px">
         <input type="text" ng-model='login.email'>
         <input type="password" ng-model='login.password'>
-          <button>Login</button>
+          <button ng-click="loginUserIn()">Login</button>
           <a ui-sref="signUp">Create an Account</a>
       </div>
     </div>
@@ -25,5 +25,5 @@
 
     <script src="app/app.js"></script>
     <script src='app/signup/signup-controller.js'></script>
-
+    <script src='app/navigation/navigation-controller.js'></script>
 </html>

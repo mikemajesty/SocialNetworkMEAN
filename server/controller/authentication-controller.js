@@ -14,7 +14,7 @@ module.exports.login = (req, res) => {
     }
 
     if (data.length > 0) {
-      res.json(req.body.email);
+      res.json({email: req.body.email, _id: data[0]._id});
     }
 
   });

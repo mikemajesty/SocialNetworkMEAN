@@ -9,11 +9,14 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
     <div class="container">
-      <div style="padding-top:10px">
+      <div style="padding-top:10px" ng-show="!loggedin">
         <input type="text" ng-model='login.email'>
         <input type="password" ng-model='login.password'>
           <button ng-click="loginUserIn()">Login</button>
           <a ui-sref="signUp">Create an Account</a>
+      </div>
+      <div style="padding-top:10px" ng-show="loggedin">
+        <a ui-sref='editProfile'>Edit Profile</a>
       </div>
     </div>
   </nav>

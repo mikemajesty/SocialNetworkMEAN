@@ -3,9 +3,10 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 var app  = express();
-
+var authenticationController = require("./server/controller/authentication-controller");
 mongoose.connect('mongodb://localhost:27017/banco');
 
+app.use(bodyParser.json());
 app.use('/app', express.static(__dirname  + '/app'));
 app.use('/node_modules',  express.static(__dirname  + '/node_modules'))
 

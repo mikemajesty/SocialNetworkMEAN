@@ -7,5 +7,21 @@ module.exports.updatePhoto = (req, res) => {
   var file = req.files.file;
   var userId = req.body.userId;
 
-  res.json({file: file});
+  var uploadDate = new Date().toISOString();
+  uploadDate = uploadDate.replace('.','');
+  uploadDate = uploadDate.replace('-','');
+  uploadDate = uploadDate.replace(':','');
+
+  const tempPath = file.path;
+  const targetPath  = path.
+        join(__dirname, `../../upload/${userId}${uploadDate}${file.name}`);
+
+  fs.rename(tempPath, targetPath, (err) => {
+     if (err) {
+       console.log(err);
+     }
+     else{
+       console.log('file moved');
+     }
+  });
 };

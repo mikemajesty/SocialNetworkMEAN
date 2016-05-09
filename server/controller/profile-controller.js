@@ -21,17 +21,56 @@ module.exports.updatePhoto = (req, res) => {
      if (err) {
         throw err;
      }
-     User.find(userId, (err, data) => {
+     User.findById(userId, (err, data) => {
        var user = new User(data);
-       console.log('wtf', user);
        user.image = savePath;
        user.save( (e) => {
-         if (e) {throw e;}
+         if (e){
+           res.json({status: 500});
+         }
 
          console.log('save successful');
-
+         res.json({status: 200});
        });
 
      });
   });
+};
+
+module.exports.updateUserName = (req, res) => {
+  var userName = req.body.userName;
+  var userId = req.body.userId;
+
+  User.findById(userId, (err, data) => {
+    var user = new User(data);
+    user.username = userName;
+    user.save( (err) => {
+      if(err){
+        console.log('erro save', err);
+        res.json({status: 500});
+      }else {
+        console.log('success save');
+        res.json({status: 200});
+      }
+    });
+  });
+};
+
+module.exports.updateBio = (req, res) => {
+  var bio = req.body.bio;
+  var userId = req.body.userId;
+
+  User.findById(userId, (err, data) => {
+    var user = new User(data);
+    user.bio = bio;
+    user.save( (err) => {
+        if (err) {
+          console.log('error bio save', err);
+        }else {
+          console.log('success save bio');
+        }
+    });
+  });
+
+
 };

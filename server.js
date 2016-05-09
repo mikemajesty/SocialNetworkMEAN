@@ -32,6 +32,9 @@ app.post('/api/user/login', authenticationController.login);
 
 // profile
 app.post('/api/profile/editPhoto', multiPartMiddleare, profileController.updatePhoto);
+app.post('/api/profile/updateUserName', profileController.updateUserName)
+app.post('/api/profile/updateBio', profileController.updateBio)
+
 
 app.listen('3000', () => {
     console.log("This is running in the post 3000");

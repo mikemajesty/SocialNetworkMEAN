@@ -8,10 +8,11 @@
   </div>
 
   <div class="row">
-    <input type="text" class="form-control" ng-model="User.username">
+    <input type="text" class="form-control"
+      ng-model="User.username" ng-blur='updateUserName()'>
   </div>
 
   <div class="row">
-      <textarea name="User.bio" class="form-control" rows="8" cols="40"></textarea>
+      <textarea ng-model="User.bio" ng-blur='updateBio()' class="form-control" rows="8" cols="40"></textarea>
   </div>
 </div>

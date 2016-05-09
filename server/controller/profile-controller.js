@@ -12,16 +12,26 @@ module.exports.updatePhoto = (req, res) => {
   uploadDate = uploadDate.replace('-','');
   uploadDate = uploadDate.replace(':','');
 
+  const savePath =  `../../upload/${userId}${uploadDate}${file.name}`
   const tempPath = file.path;
-  const targetPath  = path.
-        join(__dirname, `../../upload/${userId}${uploadDate}${file.name}`);
+  const targetPath  = path.join(__dirname, savePath);
+
 
   fs.rename(tempPath, targetPath, (err) => {
      if (err) {
-       console.log(err);
+        throw err;
      }
-     else{
-       console.log('file moved');
-     }
+     User.find(userId, (err, data) => {
+       var user = new User(data);
+       console.log('wtf', user);
+       user.image = savePath;
+       user.save( (e) => {
+         if (e) {throw e;}
+
+         console.log('save successful');
+
+       });
+
+     });
   });
 };

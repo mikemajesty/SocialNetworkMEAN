@@ -1,3 +1,7 @@
 <div class="col-lg-10 col-lg-offset-1">
-  Tweets will go here
+  <div class="row">
+    <textarea ng-model='newWaste'
+    class="form-control" placeholder='Post Waste..... then press ENTER'
+    ng-keypress='sendWaste($event)' cols="30" rows="10"></textarea>
+  </div>
 </div>

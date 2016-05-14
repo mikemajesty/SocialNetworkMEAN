@@ -17,8 +17,7 @@
               .state('main', {
                 url: '/home',
                 templateUrl: 'app/main/main.html',
-                controller: 'MainController',
-                controllerAs: 'vm'
+                controller: 'MainController'
               });
           });
 }());

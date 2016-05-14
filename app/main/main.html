@@ -4,4 +4,18 @@
     class="form-control" placeholder='Post Waste..... then press ENTER'
     ng-keypress='sendWaste($event)' cols="30" rows="10"></textarea>
   </div>
+  <div class="row">
+    <table class="table content-waste">
+      <tr ng-repeat="waste in wastes">
+         <td>
+            {{waste.user}}
+            <image ng-src="{{waste.userImage}}" class="img-responsive">
+        </td>
+        <td>
+          {{waste.date | date: 'dd/MM/yyyy hh:mm'}} <br>
+          {{waste.content}}
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>

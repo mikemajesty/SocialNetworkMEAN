@@ -14,8 +14,8 @@
                userImage: $scope.user.image,
                content:  $scope.newWaste
              };
-             $http.post('api/waste/post', request).then( data => {
-                console.log(data);
+             $http.post('api/waste/new', request).then( res => {
+                $scope.wastes = res.data;
              }).catch((err) => { console.log(err);});
            }
 

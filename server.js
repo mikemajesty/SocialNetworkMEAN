@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use(multiPartMiddleare);
 app.use('/app', express.static(__dirname  + '/app'));
 app.use('/node_modules',  express.static(__dirname  + '/node_modules'))
-
+app.use('/upload', express.static(__dirname  + '/upload'))
 
 app.get('/', (req,res) => {
   res.sendfile('index.html');

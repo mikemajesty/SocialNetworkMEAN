@@ -12,5 +12,13 @@
             })
             .error( (err) => {console.log(err);} );
        };
+
+       $scope.logOut = () => {
+         localStorage.clear();
+         $scope.loggedin = false;
+       };
+
+
+
     }]);
 }());

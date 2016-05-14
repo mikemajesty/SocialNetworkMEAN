@@ -4,6 +4,7 @@
     <title>Hello</title>
     <link rel="stylesheet" href='node_modules/bootstrap/dist/css/bootstrap.min.css'></link>
     <link rel="stylesheet" href='app/css/main.css'>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -16,7 +17,14 @@
           <a ui-sref="signUp">Create an Account</a>
       </div>
       <div style="padding-top:10px" ng-show="loggedin">
-        <a ui-sref='editProfile'>Edit Profile</a>
+        <a ui-sref='editProfile'>
+          Edit Profile
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+        <a ng-click="logOut();" class="pull-right">
+          Logout
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </a>
       </div>
     </div>
   </nav>

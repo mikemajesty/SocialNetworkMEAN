@@ -38,6 +38,7 @@ app.post('/api/profile/updateBio', profileController.updateBio)
 
 // waste
 app.post('/api/waste/new', wasteController.sendWaste );
+app.get('/api/waste/get',wasteController.getWastes);
 
 app.listen('3000', () => {
     console.log("This is running in the post 3000");
